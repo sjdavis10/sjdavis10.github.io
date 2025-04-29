@@ -16,7 +16,7 @@ xhr.onreadystatechange -function(){
             Status: ${xhr.status}');
             }
         // And then call the function toi update the HTML with our data
-        populateGradebook("JSON.parse(xhr.responseText"));
+        populateGradebook(JSON.parse(xhr.responseText));
 }
 }.bind(this);
 xhr.open("get", apiRoute, true);
@@ -42,13 +42,10 @@ data.forEach(function(assignment){ // foreach row of data we're passed in
     //add the table data columns to the table row
     row.appendChild(columns.name)
     row.appendChild(columns.grade);
-    )
     // Add the row to the table itself to make the data visible
     tableElm.appendChild(row);
     
 
-
-//TODO REMOVE THIS
 //Call the stubs to demonstrate the workflow
 const gradeData = fetchGradeData();
 populateGradebook(gradeData);
